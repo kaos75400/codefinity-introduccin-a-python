@@ -1,5 +1,20 @@
-def countdown(start_number):
-    """Generate a countdown list from start_number down to 1."""
+def countdown(start_number: int) -> list[int]:
+    """Genera una lista de cuenta regresiva desde start_number hasta 1.
+
+    Args:
+        start_number: Número entero desde el cual iniciar la cuenta regresiva.
+
+    Returns:
+        Lista de enteros en orden descendente desde start_number hasta 1.
+
+    Raises:
+        TypeError: Si start_number no es un entero.
+    """
+    if not isinstance(start_number, int):
+        raise TypeError(
+            f"start_number debe ser un entero, se recibió {type(start_number).__name__}"
+        )
+
     countdown_values = []
     current = start_number
     while current >= 1:
@@ -9,8 +24,7 @@ def countdown(start_number):
 
 
 if __name__ == "__main__":
-    # Agregar primero el valor inicial
     start_number = 5
     countdown_values = countdown(start_number)
-    print("Discount countdown complete!")
+    print("¡Cuenta regresiva completada!")
     print(countdown_values)
